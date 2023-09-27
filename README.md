@@ -1,6 +1,6 @@
 # app-gestion-cuentas
 
-Descripción breve del proyecto.
+Trabajo para el curso de Arquitectura de Software.
 
 ## Requisitos Previos
 
@@ -44,7 +44,10 @@ Este proyecto está licenciado bajo la [Licencia MIT](LICENSE).
 
 ## Contacto
 
-- ANGELES RODRIGUEZ, ILAN NESTOR - [ilanangelesrodriguez@gmail.com](mailto:ilanangelesrodriguez@gmail.com)
+- Aguilar Villafana, Juan José - [juanjitoaguilarv@gmail.com](mailto:juanjitoaguilarv@gmail.com)
+- Angeles Rodriguez, Ilan Néstor - [ilanangelesrodriguez@gmail.com](mailto:ilanangelesrodriguez@gmail.com)
+- Dueñas Blas, Jhosep - [Joseph160704@gmail.com](mailto:Joseph160704@gmail.com)
+- Hurtado Ramos, Ronald - [maxx1212_2@hotmail.com](mailto:maxx1212_2@hotmail.com)
 - [Enlace al Repositorio en GitHub](https://github.com/ilanangelesrodriguez/app-gestion-cuentas)
 
 
