@@ -1,12 +1,12 @@
-package com.aadh.app.gestion.cuentas;
+package com.aadh.appgestioncuentas;
 
 /**
  *
  * @author
- *   - AGUILAR
- *   - ANGELES
- *   - DUEÑAS
- *   - HURTADO
+ *   - Aguilar Villafana
+ *   - Angeles Rodriguez
+ *   - Dueñas Blas
+ *   - Hurtado Ramos
  * 
  */
 public class AppGestionCuentas {
