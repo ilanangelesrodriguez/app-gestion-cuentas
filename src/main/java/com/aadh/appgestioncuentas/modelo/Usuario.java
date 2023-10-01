@@ -77,6 +77,10 @@ public class Usuario {
         return password;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public boolean isCuentaBloqueada() {
         return estado.isCuentaBloqueada();
     }
