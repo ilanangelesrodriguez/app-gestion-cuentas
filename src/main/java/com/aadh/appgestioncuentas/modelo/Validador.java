@@ -38,9 +38,10 @@ public class Validador {
         String password=new String(contrasena);
         Pattern pattern = Pattern.compile(patron);
         Matcher matcher = pattern.matcher(password);
+
         Boolean charvalido=matcher.matches();
         boolean contrasenaValida = contrasena.length == 6;
-
+        
         if (!contrasenaValida) {
             mostrarMensajeError("La contraseña debe tener al menos 6 caracteres.");
         }else if(!charvalido){
