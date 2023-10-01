@@ -1,6 +1,8 @@
 package com.aadh.appgestioncuentas.modelo;
 
 import com.aadh.appgestioncuentas.controlador.ControladorUsuario;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,7 +23,12 @@ public class Validador {
     
     public boolean validarContrasena(char[] contrasena) {
         // Lógica de validación de la contraseña
-        return contrasena.length == 6;  // La contraseña debe tener al menos 6 caracteres
+        String patron = "^[a-z0-9]+$";
+        String password=new String(contrasena);
+        Pattern pattern = Pattern.compile(patron);
+        Matcher matcher = pattern.matcher(password);
+
+        return contrasena.length == 6 && matcher.matches();  // La contraseña debe tener al menos 6 caracteres
     }
     
     public void mostrarMensajeError(String mensaje) {

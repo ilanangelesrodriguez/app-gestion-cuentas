@@ -4,6 +4,11 @@
  */
 package com.aadh.appgestioncuentas.vista;
 
+import com.aadh.appgestioncuentas.controlador.ControladorUsuario;
+import com.aadh.appgestioncuentas.controlador.LoginUsuario;
+import com.aadh.appgestioncuentas.modelo.Usuario;
+import com.aadh.appgestioncuentas.modelo.Validador;
+import javax.swing.JFrame;
 /**
  *
  * @author maxx1212
@@ -15,6 +20,8 @@ public class Reactivar extends javax.swing.JFrame {
      */
     public Reactivar() {
         initComponents();
+        this.setTitle("Reactivar Cuenta");
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -29,14 +36,17 @@ public class Reactivar extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        TFUsername = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        PFpassword = new javax.swing.JPasswordField();
+        BtReactivar = new javax.swing.JButton();
+        BtRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(0, 0));
+        setSize(new java.awt.Dimension(600, 592));
 
-        jPanel1.setPreferredSize(preferredSize());
+        jPanel1.setPreferredSize(new java.awt.Dimension(600, 592));
 
         jLabel1.setFont(new java.awt.Font("Noto Sans", 0, 32)); // NOI18N
         jLabel1.setText("RECUPERAR CUENTA");
@@ -44,19 +54,32 @@ public class Reactivar extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Noto Sans", 0, 24)); // NOI18N
         jLabel2.setText("Contraseña");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        TFUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                TFUsernameActionPerformed(evt);
             }
         });
 
         jLabel3.setFont(new java.awt.Font("Noto Sans", 0, 24)); // NOI18N
         jLabel3.setText("Usuario");
 
-        jPasswordField1.setText("jPasswordField1");
+        PFpassword.setText("jPasswordField1");
 
-        jButton1.setFont(new java.awt.Font("Noto Sans", 0, 32)); // NOI18N
-        jButton1.setText("REACTIVAR");
+        BtReactivar.setFont(new java.awt.Font("Noto Sans", 0, 32)); // NOI18N
+        BtReactivar.setText("REACTIVAR");
+        BtReactivar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtReactivarActionPerformed(evt);
+            }
+        });
+
+        BtRegresar.setFont(new java.awt.Font("Noto Sans", 0, 24)); // NOI18N
+        BtRegresar.setText("Regresar");
+        BtRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtRegresarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -65,16 +88,21 @@ public class Reactivar extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(145, 145, 145)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1)
+                    .addComponent(TFUsername)
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPasswordField1))
+                    .addComponent(PFpassword))
                 .addContainerGap(146, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(201, 201, 201))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(BtReactivar)
+                        .addGap(201, 201, 201))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(BtRegresar)
+                        .addGap(37, 37, 37))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,14 +112,16 @@ public class Reactivar extends javax.swing.JFrame {
                 .addGap(61, 61, 61)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TFUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PFpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52)
-                .addComponent(jButton1)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addComponent(BtReactivar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(BtRegresar)
+                .addGap(41, 41, 41))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -104,15 +134,48 @@ public class Reactivar extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void TFUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFUsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_TFUsernameActionPerformed
+
+    private void BtReactivarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtReactivarActionPerformed
+        // TODO add your handling code here:
+        String username=TFUsername.getText();
+        char[] password=PFpassword.getPassword();
+        LoginUsuario lu = LoginUsuario.getInstance();
+        Validador validador = new Validador();
+        ControladorUsuario controladorUsuario = new ControladorUsuario(lu.getUsuarios());
+        Usuario user=controladorUsuario.obtenerUsuarioPorNombre(username);
+        if (user!=null){
+            
+            if (user.getPassword().equals(new String(password))){
+                validador.mostrarMensajeError("La contraseña debe ser diferente a la anterior");
+            }else if(validador.validarContrasena(password)){
+                validador.mostrarMensajeError("La contraseña debe ser de números y letras minusculas y ser de 6 caracteres");
+            }else{
+                user.setPassword(new String(password));
+                validador.mostrarMensajeCorrecto("Contraseña cambiada con éxito");
+                BtRegresar.doClick();
+            }
+        }else{
+            validador.mostrarMensajeError("Usuario no encontrado");
+        }
+        
+                
+    }//GEN-LAST:event_BtReactivarActionPerformed
+
+    private void BtRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtRegresarActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        JFrame login=new VistaLogin();
+        login.setVisible(true);
+    }//GEN-LAST:event_BtRegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,12 +213,13 @@ public class Reactivar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton BtReactivar;
+    private javax.swing.JButton BtRegresar;
+    private javax.swing.JPasswordField PFpassword;
+    private javax.swing.JTextField TFUsername;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
