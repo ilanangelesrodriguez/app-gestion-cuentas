@@ -17,16 +17,26 @@ public class ControladorRol {
 
     public ControladorRol() {
     }
+    
     public void addRol(Rol rol){
         this.roles.add(rol);
     }
     public Rol readRol(String nameRol){
         for (Rol rol : roles) {
-            if (rol.getNombre()==nameRol){
+            if (rol.getNombre().equals(nameRol)){
                 return rol;
             }
             
         }
+        return null;
+    }
+    public void updateNameRol(String nameRol, String change){
+        Rol rol=readRol(nameRol);
+        rol.setNombre(change);
+    }
+    public void downRol(String nameRol, String change){
+        Rol rol=readRol(nameRol);
+        rol.setState(change);
     }
     
     
