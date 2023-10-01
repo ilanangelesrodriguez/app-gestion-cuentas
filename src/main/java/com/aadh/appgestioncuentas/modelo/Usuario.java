@@ -55,10 +55,6 @@ public class Usuario {
         this.intentosFallidos = 0;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -95,5 +91,7 @@ public class Usuario {
     public void setFechaBloqueo(LocalDateTime fechaBloqueo) {
         this.fechaBloqueo = fechaBloqueo;
     }
+
+
 
 }

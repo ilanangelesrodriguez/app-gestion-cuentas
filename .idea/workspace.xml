@@ -5,8 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae0ac33a-a446-4f1c-9162-d13b1fd2f2e6" name="Changes" comment="feat(usuario): agregar campo fechaBloqueo">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/FrmHome.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/FrmHome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/FrmRol.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/FrmRol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/FrmUser.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/FrmUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/FrmVisor.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/FrmVisor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/Reactivar.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/Reactivar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/g_roles.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/g_usuarios.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/userDefault.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/VistaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/VistaLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/modelo/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/modelo/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/modelo/Validador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/modelo/Validador.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,16 +66,16 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;H01-inicio-de-sesion&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ILAN/Desktop/arquitectura software/app-gestion-cuentas&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Merging H02-form-main",
+    "last_opened_file_path": "C:/Users/ILAN/Desktop/arquitectura software/app-gestion-cuentas",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ILAN\Desktop\arquitectura software\app-gestion-cuentas\src\main\resources" />

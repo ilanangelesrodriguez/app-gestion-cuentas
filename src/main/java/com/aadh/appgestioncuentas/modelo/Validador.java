@@ -1,6 +1,8 @@
 package com.aadh.appgestioncuentas.modelo;
 
 import com.aadh.appgestioncuentas.controlador.ControladorUsuario;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
