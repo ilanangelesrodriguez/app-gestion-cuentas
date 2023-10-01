@@ -1,5 +1,6 @@
 package com.aadh.appgestioncuentas.controlador;
 
+import com.aadh.appgestioncuentas.modelo.Rol;
 import com.aadh.appgestioncuentas.modelo.Usuario;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +20,8 @@ public class ControladorUsuario {
     public ControladorUsuario(List<Usuario> listaUsuarios) {
         this.listaUsuarios = listaUsuarios;
     }
-    public void agregarUsuario(String username, String password) {
-        Usuario nuevoUsuario = new Usuario(username, password);
+    public void agregarUsuario(String nombreUsuario,String name,Rol rol, String contrasena) {
+        Usuario nuevoUsuario = new Usuario(nombreUsuario, name, rol,contrasena);
         listaUsuarios.add(nuevoUsuario);
     }
 
