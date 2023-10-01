@@ -62,15 +62,16 @@ public class Reactivar extends javax.swing.JFrame {
 
         BtRecuperar.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         BtRecuperar.setText("Recuperar");
-        BtRecuperar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BtRecuperar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtRecuperar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtRecuperarActionPerformed(evt);
             }
         });
 
-        BtRegresar.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
+        BtRegresar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         BtRegresar.setText("Regresar");
+        BtRegresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtRegresarActionPerformed(evt);
@@ -83,27 +84,21 @@ public class Reactivar extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(119, 119, 119)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(TFUsername)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PFpassword))
-                .addContainerGap(120, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(BtRegresar)
-                        .addGap(62, 62, 62))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(BtRecuperar, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(140, 140, 140))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BtRegresar)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(TFUsername)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(PFpassword)
+                        .addComponent(BtRecuperar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(64, 64, 64)
+                .addGap(54, 54, 54)
                 .addComponent(jLabel1)
                 .addGap(35, 35, 35)
                 .addComponent(jLabel3)
@@ -115,9 +110,9 @@ public class Reactivar extends javax.swing.JFrame {
                 .addComponent(PFpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BtRecuperar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(BtRegresar)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BtRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
