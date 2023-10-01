@@ -2,6 +2,7 @@ package com.aadh.appgestioncuentas.vista;
 
 import com.aadh.appgestioncuentas.controlador.ControladorUsuario;
 import com.aadh.appgestioncuentas.controlador.LoginUsuario;
+import com.aadh.appgestioncuentas.modelo.Usuario;
 import com.aadh.appgestioncuentas.modelo.Validador;
 import java.util.Arrays;
 
@@ -201,7 +202,11 @@ public class VistaLogin extends javax.swing.JFrame {
         Validador validador = new Validador();
         LoginUsuario loginUsuario = LoginUsuario.getInstance();
 
-        if (loginUsuario.autenticar(nombreUsuario, password) && validador.validarContrasena(pass) ) {
+        Usuario usuario = loginUsuario.encontrarUsuario(nombreUsuario);
+
+        if (validador.validarNombreUsuario(nombreUsuario, usuario) &&
+                loginUsuario.autenticar(nombreUsuario, password) &&
+                validador.validarContrasena(password.toCharArray())) {
             // Credenciales válidas, realizar acciones correspondientes
             validador.mostrarMensajeCorrecto("Bienvenido " + nombreUsuario);
         } else {

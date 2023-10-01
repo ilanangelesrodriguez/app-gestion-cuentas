@@ -1,8 +1,17 @@
 package com.aadh.appgestioncuentas.modelo;
 
-import java.util.Date;
+import com.aadh.appgestioncuentas.controlador.EstadoNormal;
+import com.aadh.appgestioncuentas.controlador.EstadoUsuario;
+
+import java.time.LocalDateTime;
 
 /**
+ *
+ *  Clase que representa a un usuario en el sistema.
+ *
+ *  <p>Esta clase incluye información básica sobre un usuario, como su nombre de usuario,
+ *  contraseña y estado actual. Además, registra el número de intentos de inicio de sesión fallidos
+ *  y la fecha de bloqueo en caso de exceder los intentos permitidos.</p>
  *
  * @author
  *   - Aguilar Villafana
@@ -12,19 +21,41 @@ import java.util.Date;
  * 
  */
 public class Usuario {
-    private final String username;
-    private final String name;
-    private String state;
-    private Rol rol;
+    /**
+     * Nombre de usuario del usuario.
+     */
+    private String username;
+    /**
+     * Contraseña del usuario.
+     */
     private String password;
-    private Date DateBlock;
+    /**
+     * Estado actual del usuario.
+     */
+    private EstadoUsuario estado;
+    /**
+     * Número de intentos de inicio de sesión fallidos.
+     */
+    private int intentosFallidos;
+    /**
+     * Fecha y hora de bloqueo de la cuenta en caso de exceder los intentos fallidos permitidos.
+     */
+    private LocalDateTime fechaBloqueo;
 
-    public Usuario(String username, String name, Rol rol, String password) {
+    /**
+     * Constructor de la clase Usuario.
+     *
+     * @param username Nombre de usuario.
+     * @param password Contraseña.
+     */
+    public Usuario(String username, String password) {
         this.username = username;
         this.name = name;
         this.state="active";
         this.rol = rol;
         this.password = password;
+        this.estado = new EstadoNormal();
+        this.intentosFallidos = 0;
     }
 
     public String getUsername() {
@@ -55,26 +86,37 @@ public class Usuario {
         return password;
     }
 
-    public Boolean setPassword(String password) {
-        char[] pass = password.toCharArray();
-        Validador validador=new Validador();
-        if (validador.validarContrasena(pass)){
-            this.password = password;    
-            return true;
-        }
-        else{
-            return false;
-        }
-            
+    public boolean isCuentaBloqueada() {
+        return estado.isCuentaBloqueada();
     }
 
-    public Date getDateBlock() {
-        return DateBlock;
+    public void intentoExitoso() {
+        estado.intentoExitoso(this);
+        intentosFallidos = 0;
     }
 
-    public void setDateBlock(Date DateBlock) {
-        this.DateBlock = DateBlock;
+    public void intentoFallido() {
+        estado.intentoFallido(this);
     }
 
+    public int getIntentosFallidos() {
+        return intentosFallidos;
+    }
+
+    public void incrementarIntentosFallidos() {
+        intentosFallidos++;
+    }
+
+    public void setEstado(EstadoUsuario estado) {
+        this.estado = estado;
+    }
+
+    public LocalDateTime getFechaBloqueo() {
+        return fechaBloqueo;
+    }
+
+    public void setFechaBloqueo(LocalDateTime fechaBloqueo) {
+        this.fechaBloqueo = fechaBloqueo;
+    }
 
 }
