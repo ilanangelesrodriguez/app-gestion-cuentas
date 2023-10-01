@@ -31,6 +31,10 @@ public class Usuario {
      */
     private String password;
     /**
+     * Rol del usuario
+     */
+    private Rol rol;
+    /**
      * Estado actual del usuario.
      */
     private EstadoUsuario estado;
@@ -49,11 +53,20 @@ public class Usuario {
      * @param username Nombre de usuario.
      * @param password Contraseña.
      */
-    public Usuario(String username, String password) {
+    public Usuario(String username,Rol rol, String password) {
         this.username = username;
         this.password = password;
+        this.rol=rol;
         this.estado = new EstadoNormal();
         this.intentosFallidos = 0;
+    }
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
     }
 
     public String getUsername() {
