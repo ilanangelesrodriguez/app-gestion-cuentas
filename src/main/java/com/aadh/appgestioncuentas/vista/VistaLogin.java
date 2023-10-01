@@ -2,6 +2,7 @@ package com.aadh.appgestioncuentas.vista;
 
 import com.aadh.appgestioncuentas.controlador.ControladorUsuario;
 import com.aadh.appgestioncuentas.controlador.LoginUsuario;
+import com.aadh.appgestioncuentas.modelo.Usuario;
 import com.aadh.appgestioncuentas.modelo.Validador;
 import java.util.Arrays;
 
@@ -26,8 +27,8 @@ public class VistaLogin extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Inicio del Sistema");
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
-    
     
 
     /**
@@ -41,6 +42,7 @@ public class VistaLogin extends javax.swing.JFrame {
 
         banner = new javax.swing.JPanel();
         bannerImage = new javax.swing.JLabel();
+        botonRecuperarCuenta = new javax.swing.JToggleButton();
         formulario = new javax.swing.JPanel();
         usernameLabel = new javax.swing.JLabel();
         usernameField = new javax.swing.JTextField();
@@ -55,14 +57,20 @@ public class VistaLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        try {
-            String imagePath = "/banner.png";
-            bannerImage.setIcon(new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource(imagePath))));
-            bannerImage.revalidate();
-            bannerImage.repaint();
-        } catch (Exception e) {
-            System.out.println("No se pudo cargar la imagen del banner: " + e.getMessage());
-        }
+        bannerImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/banner.png"))); // NOI18N
+
+        botonRecuperarCuenta.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
+        botonRecuperarCuenta.setForeground(new java.awt.Color(0, 0, 102));
+        botonRecuperarCuenta.setText("Recuperar Cuenta");
+        botonRecuperarCuenta.setBorder(null);
+        botonRecuperarCuenta.setBorderPainted(false);
+        botonRecuperarCuenta.setContentAreaFilled(false);
+        botonRecuperarCuenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonRecuperarCuenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRecuperarCuentaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout bannerLayout = new javax.swing.GroupLayout(banner);
         banner.setLayout(bannerLayout);
@@ -70,24 +78,29 @@ public class VistaLogin extends javax.swing.JFrame {
             bannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bannerLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bannerImage, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addComponent(bannerImage, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(botonRecuperarCuenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         bannerLayout.setVerticalGroup(
             bannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bannerLayout.createSequentialGroup()
-                .addComponent(bannerImage, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(bannerImage, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonRecuperarCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 15, Short.MAX_VALUE))
         );
 
+        usernameLabel.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         usernameLabel.setText("Usuario:");
 
-        usernameField.setText("");
+        usernameField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
 
+        passwordLabel.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         passwordLabel.setText("Contraseña:");
 
-        passwordField.setText("");
+        passwordField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
 
+        botonEntrar.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         botonEntrar.setText("Entrar");
         botonEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonEntrar.addActionListener(new java.awt.event.ActionListener() {
@@ -96,6 +109,7 @@ public class VistaLogin extends javax.swing.JFrame {
             }
         });
 
+        botonEliminar.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         botonEliminar.setText("Eliminar");
         botonEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +155,7 @@ public class VistaLogin extends javax.swing.JFrame {
                 .addGap(0, 0, 0))
         );
 
-        title.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        title.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
         title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         title.setText("Bienvenido");
         title.setToolTipText("");
@@ -149,7 +163,7 @@ public class VistaLogin extends javax.swing.JFrame {
         title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         title.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        subTitle.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        subTitle.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         subTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         subTitle.setText("Ingresa al sistema");
 
@@ -201,15 +215,31 @@ public class VistaLogin extends javax.swing.JFrame {
         Validador validador = new Validador();
         LoginUsuario loginUsuario = LoginUsuario.getInstance();
 
-        if (loginUsuario.autenticar(nombreUsuario, password) && validador.validarContrasena(pass) ) {
+        Usuario usuario = loginUsuario.encontrarUsuario(nombreUsuario);
+
+        if (validador.validarNombreUsuario(nombreUsuario, usuario) &&
+                loginUsuario.autenticar(nombreUsuario, password) &&
+                validador.validarContrasena(password.toCharArray())) {
             // Credenciales válidas, realizar acciones correspondientes
             validador.mostrarMensajeCorrecto("Bienvenido " + nombreUsuario);
+
+            FrmHome fm = new FrmHome();
+            fm.setVisible(true);
+            this.dispose();
+
         } else {
             // Credenciales inválidas, mostrar mensaje de error
             validador.mostrarMensajeError("Credenciales inválidas. Inténtelo de nuevo.");
         }
         
     }//GEN-LAST:event_botonEntrarActionPerformed
+
+    private void botonRecuperarCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRecuperarCuentaActionPerformed
+        // TODO add your handling code here:
+        Reactivar reactivar = new Reactivar();
+        reactivar.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_botonRecuperarCuentaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,6 +283,7 @@ public class VistaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel bannerImage;
     private javax.swing.JButton botonEliminar;
     private javax.swing.JButton botonEntrar;
+    private javax.swing.JToggleButton botonRecuperarCuenta;
     private javax.swing.JPanel formulario;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

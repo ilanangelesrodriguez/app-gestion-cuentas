@@ -15,10 +15,21 @@ import javax.swing.JOptionPane;
  *
  */
 public class Validador {
-    
-    public boolean validarNombreUsuario(String nombreUsuario) {
+
+    public boolean validarNombreUsuario(String nombreUsuario, Usuario usuario) {
+        if (usuario != null && usuario.isCuentaBloqueada()) {
+            mostrarMensajeError("La cuenta está bloqueada. Contacte al administrador.");
+            return false;
+        }
+
         // Lógica de validación del nombre de usuario
-        return !nombreUsuario.isEmpty();  // El nombre de usuario no debe estar vacío
+        boolean nombreUsuarioValido = !nombreUsuario.isEmpty();
+
+        if (!nombreUsuarioValido) {
+            mostrarMensajeError("El nombre de usuario no puede estar vacío.");
+        }
+
+        return nombreUsuarioValido;
     }
     
     public boolean validarContrasena(char[] contrasena) {
@@ -27,9 +38,18 @@ public class Validador {
         String password=new String(contrasena);
         Pattern pattern = Pattern.compile(patron);
         Matcher matcher = pattern.matcher(password);
+        Boolean charvalido=matcher.matches();
+        boolean contrasenaValida = contrasena.length == 6;
 
-        return contrasena.length == 6 && matcher.matches();  // La contraseña debe tener al menos 6 caracteres
+        if (!contrasenaValida) {
+            mostrarMensajeError("La contraseña debe tener al menos 6 caracteres.");
+        }else if(!charvalido){
+            mostrarMensajeError("La contraseña debe tener letras minusculas y números");
+        }
+
+        return contrasenaValida && charvalido;
     }
+
     
     public void mostrarMensajeError(String mensaje) {
         // Método para mostrar mensajes de error (puedes usar JOptionPane o cualquier otro método de tu elección)

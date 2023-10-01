@@ -28,11 +28,10 @@ public class AppGestionCuentas {
         // Llama al método para agregar un nuevo usuario
         
             
-        controladorUsuario.agregarUsuario("Maria","maria",controladorRol.readRol("Admin"), "nuevaContraseña");
+        controladorUsuario.agregarUsuario("Maria",controladorRol.readRol("Admin"), "nuevaContraseña");
 
         // Imprime la lista actualizada de usuarios
         System.out.println("Lista de usuarios actualizada: " + lu.getUsuarios());
 
-        System.out.println(lu.getUsuarios().get(3).getUsername());
     }
 }

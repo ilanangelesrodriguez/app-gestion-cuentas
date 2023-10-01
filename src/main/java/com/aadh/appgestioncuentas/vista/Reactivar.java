@@ -9,6 +9,7 @@ import com.aadh.appgestioncuentas.controlador.LoginUsuario;
 import com.aadh.appgestioncuentas.modelo.Usuario;
 import com.aadh.appgestioncuentas.modelo.Validador;
 import javax.swing.JFrame;
+
 /**
  *
  * @author maxx1212
@@ -20,8 +21,8 @@ public class Reactivar extends javax.swing.JFrame {
      */
     public Reactivar() {
         initComponents();
-        this.setTitle("Reactivar Cuenta");
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
     /**
@@ -39,19 +40,15 @@ public class Reactivar extends javax.swing.JFrame {
         TFUsername = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         PFpassword = new javax.swing.JPasswordField();
-        BtReactivar = new javax.swing.JButton();
+        BtRecuperar = new javax.swing.JButton();
         BtRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocation(new java.awt.Point(0, 0));
-        setSize(new java.awt.Dimension(600, 592));
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(600, 592));
-
-        jLabel1.setFont(new java.awt.Font("Noto Sans", 0, 32)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 28)); // NOI18N
         jLabel1.setText("RECUPERAR CUENTA");
 
-        jLabel2.setFont(new java.awt.Font("Noto Sans", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         jLabel2.setText("Contraseña");
 
         TFUsername.addActionListener(new java.awt.event.ActionListener() {
@@ -60,20 +57,19 @@ public class Reactivar extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Noto Sans", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         jLabel3.setText("Usuario");
 
-        PFpassword.setText("jPasswordField1");
-
-        BtReactivar.setFont(new java.awt.Font("Noto Sans", 0, 32)); // NOI18N
-        BtReactivar.setText("REACTIVAR");
-        BtReactivar.addActionListener(new java.awt.event.ActionListener() {
+        BtRecuperar.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        BtRecuperar.setText("Recuperar");
+        BtRecuperar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BtRecuperar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtReactivarActionPerformed(evt);
+                BtRecuperarActionPerformed(evt);
             }
         });
 
-        BtRegresar.setFont(new java.awt.Font("Noto Sans", 0, 24)); // NOI18N
+        BtRegresar.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         BtRegresar.setText("Regresar");
         BtRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,42 +82,42 @@ public class Reactivar extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(145, 145, 145)
+                .addGap(119, 119, 119)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(TFUsername)
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PFpassword))
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addContainerGap(120, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(BtReactivar)
-                        .addGap(201, 201, 201))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(BtRegresar)
-                        .addGap(37, 37, 37))))
+                        .addGap(62, 62, 62))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(BtRecuperar, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(140, 140, 140))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
+                .addGap(64, 64, 64)
                 .addComponent(jLabel1)
-                .addGap(61, 61, 61)
+                .addGap(35, 35, 35)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(TFUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(15, 15, 15)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(PFpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
-                .addComponent(BtReactivar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(BtRecuperar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
                 .addComponent(BtRegresar)
-                .addGap(41, 41, 41))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -144,7 +140,7 @@ public class Reactivar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TFUsernameActionPerformed
 
-    private void BtReactivarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtReactivarActionPerformed
+    private void BtRecuperarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtRecuperarActionPerformed
         // TODO add your handling code here:
         String username=TFUsername.getText();
         char[] password=PFpassword.getPassword();
@@ -167,13 +163,15 @@ public class Reactivar extends javax.swing.JFrame {
             validador.mostrarMensajeError("Usuario no encontrado");
         }
         
-                
-    }//GEN-LAST:event_BtReactivarActionPerformed
+               
+
+
+    }//GEN-LAST:event_BtRecuperarActionPerformed
 
     private void BtRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtRegresarActionPerformed
         // TODO add your handling code here:
+        JFrame login =new VistaLogin();
         setVisible(false);
-        JFrame login=new VistaLogin();
         login.setVisible(true);
     }//GEN-LAST:event_BtRegresarActionPerformed
 
@@ -213,7 +211,7 @@ public class Reactivar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtReactivar;
+    private javax.swing.JButton BtRecuperar;
     private javax.swing.JButton BtRegresar;
     private javax.swing.JPasswordField PFpassword;
     private javax.swing.JTextField TFUsername;

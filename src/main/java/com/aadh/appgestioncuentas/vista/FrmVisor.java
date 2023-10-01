@@ -15,6 +15,8 @@ public class FrmVisor extends javax.swing.JFrame {
      */
     public FrmVisor() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
     /**
