@@ -57,7 +57,8 @@ public class Usuario {
 
     public Boolean setPassword(String password) {
         char[] pass = password.toCharArray();
-        if (Validador.validarContrasena(pass)){
+        Validador validador=new Validador();
+        if (validador.validarContrasena(pass)){
             this.password = password;    
             return true;
         }

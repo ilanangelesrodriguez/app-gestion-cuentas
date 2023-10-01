@@ -15,7 +15,8 @@ import java.util.List;
 public class ControladorRol {
     List<Rol> roles=new ArrayList<>();
 
-    public ControladorRol() {
+    public ControladorRol(List<Rol> roles) {
+        this.roles=roles;
     }
     
     public void addRol(Rol rol){
@@ -38,6 +39,7 @@ public class ControladorRol {
         Rol rol=readRol(nameRol);
         rol.setState(change);
     }
-    
-    
+        public List<Rol> obtenerTodosLosUsuarios() {
+        return new ArrayList<>(roles);
+    }
 }

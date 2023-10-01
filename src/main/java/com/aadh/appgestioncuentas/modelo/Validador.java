@@ -21,7 +21,7 @@ public class Validador {
         return !nombreUsuario.isEmpty();  // El nombre de usuario no debe estar vacío
     }
     
-    public static boolean validarContrasena(char[] contrasena) {
+    public boolean validarContrasena(char[] contrasena) {
         // Lógica de validación de la contraseña
         String patron = "^[a-z0-9]+$";
         String password=new String(contrasena);
