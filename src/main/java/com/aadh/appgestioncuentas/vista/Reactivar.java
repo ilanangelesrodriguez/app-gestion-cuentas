@@ -84,6 +84,7 @@ public class Reactivar extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(119, 119, 119)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(BtRecuperar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(TFUsername)
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
@@ -92,13 +93,8 @@ public class Reactivar extends javax.swing.JFrame {
                 .addContainerGap(120, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(BtRegresar)
-                        .addGap(62, 62, 62))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(BtRecuperar, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(140, 140, 140))))
+                .addComponent(BtRegresar)
+                .addGap(225, 225, 225))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,9 +111,9 @@ public class Reactivar extends javax.swing.JFrame {
                 .addComponent(PFpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BtRecuperar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
                 .addComponent(BtRegresar)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -149,15 +145,18 @@ public class Reactivar extends javax.swing.JFrame {
         ControladorUsuario controladorUsuario = new ControladorUsuario(lu.getUsuarios());
         Usuario user=controladorUsuario.obtenerUsuarioPorNombre(username);
         if (user!=null){
-            
-            if (user.getPassword().equals(new String(password))){
-                validador.mostrarMensajeError("La contraseña debe ser diferente a la anterior");
-            }else if(validador.validarContrasena(password)){
-                validador.mostrarMensajeError("La contraseña debe ser de números y letras minusculas y ser de 6 caracteres");
+            if (!user.isCuentaBloqueada()){
+                if (user.getPassword().equals(new String(password))){
+                    validador.mostrarMensajeError("La contraseña debe ser diferente a la anterior");
+                }else if(!validador.validarContrasena(password)){
+                    validador.mostrarMensajeError("La contraseña debe ser de números y letras minusculas y ser de 6 caracteres");
+                }else{
+                    user.setPassword(new String(password));
+                    validador.mostrarMensajeCorrecto("Contraseña cambiada con éxito");
+                    BtRegresar.doClick();
+                }
             }else{
-                user.setPassword(new String(password));
-                validador.mostrarMensajeCorrecto("Contraseña cambiada con éxito");
-                BtRegresar.doClick();
+                validador.mostrarMensajeError("Notifica al administrador que te active la cuenta");
             }
         }else{
             validador.mostrarMensajeError("Usuario no encontrado");
@@ -171,8 +170,8 @@ public class Reactivar extends javax.swing.JFrame {
     private void BtRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtRegresarActionPerformed
         // TODO add your handling code here:
         JFrame login =new VistaLogin();
-        setVisible(false);
         login.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BtRegresarActionPerformed
 
     /**
