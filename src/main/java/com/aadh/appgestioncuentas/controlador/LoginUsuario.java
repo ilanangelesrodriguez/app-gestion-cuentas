@@ -34,10 +34,10 @@ public class LoginUsuario {
         roles.add(new Rol("Empleado","Active"));
         
         // Agregar algunos usuarios para propósitos de ejemplo
-        usuarios.add(new Usuario("usuario1","ilan",roles.get(0), "123456"));
-        usuarios.add(new Usuario("usuario2","Ronald",roles.get(0), "max123"));
-        usuarios.add(new Usuario("usuario3","Joseph",roles.get(0), "123456"));
-        usuarios.add(new Usuario("usuario4","Juan José",roles.get(1), "123456"));
+        usuarios.add(new Usuario("usuario1",roles.get(0), "123456"));
+        usuarios.add(new Usuario("usuario2",roles.get(0), "max123"));
+        usuarios.add(new Usuario("usuario3",roles.get(0), "123456"));
+        usuarios.add(new Usuario("usuario4",roles.get(1), "123456"));
         System.out.println(usuarios.get(2).getUsername());
 
     }

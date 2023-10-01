@@ -38,7 +38,7 @@ public class Validador {
         String password=new String(contrasena);
         Pattern pattern = Pattern.compile(patron);
         Matcher matcher = pattern.matcher(password);
-        charvalido=matcher.matches();
+        Boolean charvalido=matcher.matches();
         boolean contrasenaValida = contrasena.length == 6;
 
         if (!contrasenaValida) {
