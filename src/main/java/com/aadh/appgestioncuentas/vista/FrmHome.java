@@ -51,6 +51,11 @@ public class FrmHome extends javax.swing.JFrame {
 
         g_rol.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         g_rol.setText("Gestión de Roles");
+        g_rol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                g_rolActionPerformed(evt);
+            }
+        });
 
         btn_cerrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_cerrar.setText("Cerrar Sesión");
@@ -86,9 +91,7 @@ public class FrmHome extends javax.swing.JFrame {
                             .addComponent(btn_ub, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -124,6 +127,10 @@ public class FrmHome extends javax.swing.JFrame {
 
     private void g_usuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_g_usuariosActionPerformed
         // TODO add your handling code here:
+        FrmUser frmUser = new FrmUser();
+        setVisible(false);
+        frmUser.setVisible(true);
+        
     }//GEN-LAST:event_g_usuariosActionPerformed
 
     private void btn_cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarActionPerformed
@@ -133,10 +140,17 @@ public class FrmHome extends javax.swing.JFrame {
         vistaLogin.setVisible(true);    }//GEN-LAST:event_btn_cerrarActionPerformed
 
     private void btn_ubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ubActionPerformed
-         FrmVisor frmVisor = new FrmVisor();
-         
-         frmVisor.setVisible(true);
+        FrmVisor frmVisor = new FrmVisor();
+        setVisible(false);
+        frmVisor.setVisible(true);
     }//GEN-LAST:event_btn_ubActionPerformed
+
+    private void g_rolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_g_rolActionPerformed
+        // TODO add your handling code here:
+        FrmRol frmRol = new FrmRol();
+        setVisible(false);
+        frmRol.setVisible(true);
+    }//GEN-LAST:event_g_rolActionPerformed
 
     
     
