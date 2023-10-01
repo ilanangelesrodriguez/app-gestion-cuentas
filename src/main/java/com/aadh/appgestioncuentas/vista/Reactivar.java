@@ -35,8 +35,9 @@ public class Reactivar extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(0, 0));
 
-        jPanel1.setPreferredSize(preferredSize());
+        jPanel1.setPreferredSize(getPreferredSize());
 
         jLabel1.setFont(new java.awt.Font("Noto Sans", 0, 32)); // NOI18N
         jLabel1.setText("RECUPERAR CUENTA");
@@ -104,7 +105,7 @@ public class Reactivar extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
