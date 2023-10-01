@@ -21,6 +21,7 @@ import java.time.LocalDateTime;
  * 
  */
 public class Usuario {
+
     /**
      * Nombre de usuario del usuario.
      */
@@ -50,9 +51,6 @@ public class Usuario {
      */
     public Usuario(String username, String password) {
         this.username = username;
-        this.name = name;
-        this.state="active";
-        this.rol = rol;
         this.password = password;
         this.estado = new EstadoNormal();
         this.intentosFallidos = 0;
@@ -60,26 +58,6 @@ public class Usuario {
 
     public String getUsername() {
         return username;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public Rol getRol() {
-        return rol;
-    }
-
-    public void setRol(Rol rol) {
-        this.rol = rol;
     }
 
     public String getPassword() {
@@ -118,5 +96,7 @@ public class Usuario {
     public void setFechaBloqueo(LocalDateTime fechaBloqueo) {
         this.fechaBloqueo = fechaBloqueo;
     }
+
+
 
 }
