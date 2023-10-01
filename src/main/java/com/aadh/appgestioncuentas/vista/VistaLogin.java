@@ -1,17 +1,12 @@
 package com.aadh.appgestioncuentas.vista;
 
+import com.aadh.appgestioncuentas.controlador.ControladorUsuario;
 import com.aadh.appgestioncuentas.controlador.LoginUsuario;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.JButton;
-import javax.swing.JFrame;
+import com.aadh.appgestioncuentas.modelo.Validador;
+import java.util.Arrays;
+
+import java.util.Objects;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
 
 /**
  *
@@ -29,27 +24,8 @@ public class VistaLogin extends javax.swing.JFrame {
      */
     public VistaLogin() {
         initComponents();
-        
-        // Botón de login
-        JButton loginButton = new JButton("Login");
-        loginButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Obtener los datos del usuario y contraseña
-                String username = usernameField.getText();
-                String password = new String(passwordField.getPassword());
-
-                // Lógica de autenticación utilizando LoginUsuario
-                boolean autenticado = LoginUsuario.getInstance().autenticar(username, password);
-
-                // Procesar el resultado de la autenticación
-                if (autenticado) {
-                    JOptionPane.showMessageDialog(null, "¡Autenticación exitosa!");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Autenticación fallida. Verifica tus credenciales.");
-                }
-            }
-        });
+        this.setTitle("Inicio del Sistema");
+        this.setLocationRelativeTo(null);
     }
     
     
@@ -79,7 +55,14 @@ public class VistaLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        bannerImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/aadh/appgestioncuentas/vista/banner.png"))); // NOI18N
+        try {
+            String imagePath = "/banner.png";
+            bannerImage.setIcon(new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource(imagePath))));
+            bannerImage.revalidate();
+            bannerImage.repaint();
+        } catch (Exception e) {
+            System.out.println("No se pudo cargar la imagen del banner: " + e.getMessage());
+        }
 
         javax.swing.GroupLayout bannerLayout = new javax.swing.GroupLayout(banner);
         banner.setLayout(bannerLayout);
@@ -99,17 +82,27 @@ public class VistaLogin extends javax.swing.JFrame {
 
         usernameLabel.setText("Usuario:");
 
-        usernameField.setText("nombre de usuario");
+        usernameField.setText("");
 
         passwordLabel.setText("Contraseña:");
 
-        passwordField.setText("passwordField");
+        passwordField.setText("");
 
         botonEntrar.setText("Entrar");
         botonEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEntrarActionPerformed(evt);
+            }
+        });
 
         botonEliminar.setText("Eliminar");
         botonEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout formularioLayout = new javax.swing.GroupLayout(formulario);
         formulario.setLayout(formularioLayout);
@@ -178,9 +171,7 @@ public class VistaLogin extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(banner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+            .addComponent(banner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
@@ -193,6 +184,32 @@ public class VistaLogin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarActionPerformed
+        // TODO add your handling code here:
+        usernameField.setText("");
+        passwordField.setText("");
+
+    }//GEN-LAST:event_botonEliminarActionPerformed
+
+    private void botonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEntrarActionPerformed
+        // TODO add your handling code here:
+        String nombreUsuario = usernameField.getText(); 
+        char[] pass = passwordField.getPassword();
+        String password = new String(pass);
+
+        Validador validador = new Validador();
+        LoginUsuario loginUsuario = LoginUsuario.getInstance();
+
+        if (loginUsuario.autenticar(nombreUsuario, password) && validador.validarContrasena(pass) ) {
+            // Credenciales válidas, realizar acciones correspondientes
+            validador.mostrarMensajeCorrecto("Bienvenido " + nombreUsuario);
+        } else {
+            // Credenciales inválidas, mostrar mensaje de error
+            validador.mostrarMensajeError("Credenciales inválidas. Inténtelo de nuevo.");
+        }
+        
+    }//GEN-LAST:event_botonEntrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,33 +237,15 @@ public class VistaLogin extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(VistaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new VistaLogin().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VistaLogin().setVisible(true);
+            }
         });
         
-        SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Clear Text On Click Example");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-            JTextField textField = new JTextField("Texto inicial");
-            textField.addFocusListener(new FocusAdapter() {
-                @Override
-                public void focusGained(FocusEvent e) {
-                    JTextField source = (JTextField) e.getSource();
-                    if (source.getText().equals("Texto inicial")) {
-                        source.setText("");
-                    }
-                }
-            });
-
-
-            frame.getContentPane().add(textField);
-            frame.setSize(300, 200);
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -264,4 +263,6 @@ public class VistaLogin extends javax.swing.JFrame {
     private javax.swing.JTextField usernameField;
     private javax.swing.JLabel usernameLabel;
     // End of variables declaration//GEN-END:variables
+ 
+    
 }
