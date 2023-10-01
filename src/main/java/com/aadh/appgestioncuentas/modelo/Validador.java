@@ -34,14 +34,22 @@ public class Validador {
     
     public boolean validarContrasena(char[] contrasena) {
         // Lógica de validación de la contraseña
+        String patron = "^[a-z0-9]+$";
+        String password=new String(contrasena);
+        Pattern pattern = Pattern.compile(patron);
+        Matcher matcher = pattern.matcher(password);
+        charvalido=matcher.matches();
         boolean contrasenaValida = contrasena.length == 6;
 
         if (!contrasenaValida) {
             mostrarMensajeError("La contraseña debe tener al menos 6 caracteres.");
+        }else if(!charvalido){
+            mostrarMensajeError("La contraseña debe tener letras minusculas y números");
         }
 
-        return contrasenaValida;
+        return contrasenaValida && charvalido;
     }
+
     
     public void mostrarMensajeError(String mensaje) {
         // Método para mostrar mensajes de error (puedes usar JOptionPane o cualquier otro método de tu elección)

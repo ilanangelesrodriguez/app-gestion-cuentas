@@ -1,5 +1,6 @@
 package com.aadh.appgestioncuentas.controlador;
 
+import com.aadh.appgestioncuentas.modelo.Rol;
 import com.aadh.appgestioncuentas.modelo.Usuario;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,19 +18,27 @@ public class LoginUsuario {
     private static LoginUsuario instance;
 
     private List<Usuario> usuarios;
-
+    private List<Rol> roles;
     public List<Usuario> getUsuarios() {
         return usuarios;
+    }
+    public List<Rol> getRoles(){
+        return roles;
     }
 
     public LoginUsuario() {
         // Constructor privado para evitar instanciación directa
         usuarios = new ArrayList<>();
-
+        roles= new ArrayList<>();
+        roles.add(new Rol("Admin","Active"));
+        roles.add(new Rol("Empleado","Active"));
+        
         // Agregar algunos usuarios para propósitos de ejemplo
-        usuarios.add(new Usuario("usuario1", "12345678"));
-        usuarios.add(new Usuario("usuario2", "123456"));
-        usuarios.add(new Usuario("usuario3", "123456"));
+        usuarios.add(new Usuario("usuario1","ilan",roles.get(0), "123456"));
+        usuarios.add(new Usuario("usuario2","Ronald",roles.get(0), "max123"));
+        usuarios.add(new Usuario("usuario3","Joseph",roles.get(0), "123456"));
+        usuarios.add(new Usuario("usuario4","Juan José",roles.get(1), "123456"));
+        System.out.println(usuarios.get(2).getUsername());
 
     }
     
