@@ -2,6 +2,8 @@ package com.aadh.appgestioncuentas.controlador;
 
 import com.aadh.appgestioncuentas.modelo.Usuario;
 
+import java.time.LocalDateTime;
+
 public class EstadoNormal implements EstadoUsuario {
     @Override
     public void intentoExitoso(Usuario usuario) {
@@ -13,6 +15,7 @@ public class EstadoNormal implements EstadoUsuario {
         usuario.incrementarIntentosFallidos();
         if (usuario.getIntentosFallidos() >= 3) {
             usuario.setEstado(new EstadoBloqueado());
+            usuario.setFechaBloqueo(LocalDateTime.now());
         }
     }
 

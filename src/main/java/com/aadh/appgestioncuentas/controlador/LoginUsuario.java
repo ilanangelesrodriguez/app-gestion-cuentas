@@ -27,7 +27,7 @@ public class LoginUsuario {
         usuarios = new ArrayList<>();
 
         // Agregar algunos usuarios para propósitos de ejemplo
-        usuarios.add(new Usuario("usuario1", "1234567"));
+        usuarios.add(new Usuario("usuario1", "12345678"));
         usuarios.add(new Usuario("usuario2", "123456"));
         usuarios.add(new Usuario("usuario3", "123456"));
 

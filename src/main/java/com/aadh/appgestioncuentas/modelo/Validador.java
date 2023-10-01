@@ -32,7 +32,7 @@ public class Validador {
     
     public boolean validarContrasena(char[] contrasena) {
         // Lógica de validación de la contraseña
-        boolean contrasenaValida = contrasena.length >= 6;
+        boolean contrasenaValida = contrasena.length == 6;
 
         if (!contrasenaValida) {
             mostrarMensajeError("La contraseña debe tener al menos 6 caracteres.");
