@@ -21,6 +21,7 @@ import java.time.LocalDateTime;
  * 
  */
 public class Usuario {
+
     /**
      * Nombre de usuario del usuario.
      */
@@ -53,6 +54,10 @@ public class Usuario {
         this.password = password;
         this.estado = new EstadoNormal();
         this.intentosFallidos = 0;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     public String getPassword() {

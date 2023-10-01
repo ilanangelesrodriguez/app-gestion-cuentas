@@ -29,6 +29,5 @@ public class AppGestionCuentas {
         // Imprime la lista actualizada de usuarios
         System.out.println("Lista de usuarios actualizada: " + lu.getUsuarios());
 
-        System.out.println(lu.getUsuarios().get(3).getUsername());
     }
 }

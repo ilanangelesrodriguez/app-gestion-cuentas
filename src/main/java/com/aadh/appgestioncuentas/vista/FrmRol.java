@@ -15,6 +15,8 @@ public class FrmRol extends javax.swing.JFrame {
      */
     public FrmRol() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
     /**
