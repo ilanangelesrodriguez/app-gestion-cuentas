@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae0ac33a-a446-4f1c-9162-d13b1fd2f2e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/ControladorUsuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/modelo/Validador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/AppGestionCuentas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/AppGestionCuentas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/Controlador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/ControladorUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/ControladorUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/LoginUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/LoginUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/modelo/Cuenta.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/Vista.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/VistaLogin.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/VistaLogin.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/VistaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/VistaLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/banner.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/banner.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +24,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "ilanangelesrodriguez"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="7583e3df-bc05-4843-a087-eff00c90fa40" />
+        <option name="url" value="https://github.com/ilanangelesrodriguez/app-gestion-cuentas" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -107,8 +111,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.VistaLogin" />
-        <item itemvalue="Application.AppGestionCuentas" />
         <item itemvalue="Application.LoginUsuario" />
+        <item itemvalue="Application.AppGestionCuentas" />
       </list>
     </recent_temporary>
   </component>
@@ -122,5 +126,16 @@
       <updated>1695859058660</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

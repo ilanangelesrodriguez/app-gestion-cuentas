@@ -31,13 +31,6 @@ public class LoginUsuario {
         usuarios.add(new Usuario("usuario3", "123456"));
         usuarios.add(new Usuario("usuario3", "123456"));
 
-        System.out.println(usuarios.get(2).getUsername());
-
-    }
-
-    public static void main(String[] args) {
-        System.out.println();
-        LoginUsuario loginUsuario = new LoginUsuario();
     }
     
     public static LoginUsuario getInstance() {

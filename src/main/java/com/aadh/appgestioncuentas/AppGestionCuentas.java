@@ -24,7 +24,7 @@ public class AppGestionCuentas {
         ControladorUsuario controladorUsuario = new ControladorUsuario(lu.getUsuarios());
 
         // Llama al método para agregar un nuevo usuario
-        controladorUsuario.agregarUsuario("Maria", "nuevaContraseña");
+        controladorUsuario.agregarUsuario("nuevoUsuario", "nuevaContraseña");
 
         // Imprime la lista actualizada de usuarios
         System.out.println("Lista de usuarios actualizada: " + lu.getUsuarios());
