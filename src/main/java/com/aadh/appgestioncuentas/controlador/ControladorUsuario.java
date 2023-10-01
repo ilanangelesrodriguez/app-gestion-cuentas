@@ -20,8 +20,8 @@ public class ControladorUsuario {
     public ControladorUsuario(List<Usuario> listaUsuarios) {
         this.listaUsuarios = listaUsuarios;
     }
-    public void agregarUsuario(String nombreUsuario,String name,Rol rol, String contrasena) {
-        Usuario nuevoUsuario = new Usuario(nombreUsuario, name, rol,contrasena);
+    public void agregarUsuario(String nombreUsuario,Rol rol, String contrasena) {
+        Usuario nuevoUsuario = new Usuario(nombreUsuario, rol,contrasena);
         listaUsuarios.add(nuevoUsuario);
     }
 

@@ -79,7 +79,7 @@ public class FrmUser extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "ID", "Nombres", "Rol", "Acción"
+                "", "Nombres", "Rol", "Acción"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
