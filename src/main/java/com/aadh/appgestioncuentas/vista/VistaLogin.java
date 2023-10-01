@@ -27,6 +27,7 @@ public class VistaLogin extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Inicio del Sistema");
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
     
     
@@ -209,6 +210,7 @@ public class VistaLogin extends javax.swing.JFrame {
                 validador.validarContrasena(password.toCharArray())) {
             // Credenciales válidas, realizar acciones correspondientes
             validador.mostrarMensajeCorrecto("Bienvenido " + nombreUsuario);
+
         } else {
             // Credenciales inválidas, mostrar mensaje de error
             validador.mostrarMensajeError("Credenciales inválidas. Inténtelo de nuevo.");
