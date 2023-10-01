@@ -28,7 +28,7 @@ public class LoginUsuario {
 
         // Agregar algunos usuarios para propósitos de ejemplo
         usuarios.add(new Usuario("usuario1", "1234567"));
-        usuarios.add(new Usuario("usuario3", "123456"));
+        usuarios.add(new Usuario("usuario2", "123456"));
         usuarios.add(new Usuario("usuario3", "123456"));
 
     }
@@ -41,14 +41,31 @@ public class LoginUsuario {
     }
 
     public boolean autenticar(String username, String password) {
-        for (Usuario usuario : usuarios) {
-            System.out.println("Comparando con usuario: " + usuario.getUsername());
-            if (usuario.getUsername().equals(username) && usuario.getPassword().equals(password)) {
+        Usuario usuario = encontrarUsuario(username);
+        if (usuario != null && !usuario.isCuentaBloqueada()) {
+            if (usuario.getPassword().equals(password)) {
+                // Credenciales válidas
+                usuario.intentoExitoso();
                 System.out.println("Credenciales válidas para usuario: " + usuario.getUsername());
                 return true;
+            } else {
+                // Credenciales inválidas
+                System.out.println("Intento de login fallido para usuario: " + username);
+                usuario.intentoFallido();
             }
+        } else {
+            System.out.println("La cuenta está bloqueada. Contacte al administrador.");
         }
         return false;
+    }
+
+    public Usuario encontrarUsuario(String username) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getUsername().equals(username)) {
+                return usuario;
+            }
+        }
+        return null;
     }
 
 }

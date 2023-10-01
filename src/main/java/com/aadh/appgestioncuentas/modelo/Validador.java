@@ -13,15 +13,32 @@ import javax.swing.JOptionPane;
  *
  */
 public class Validador {
-    
-    public boolean validarNombreUsuario(String nombreUsuario) {
+
+    public boolean validarNombreUsuario(String nombreUsuario, Usuario usuario) {
+        if (usuario != null && usuario.isCuentaBloqueada()) {
+            mostrarMensajeError("La cuenta está bloqueada. Contacte al administrador.");
+            return false;
+        }
+
         // Lógica de validación del nombre de usuario
-        return !nombreUsuario.isEmpty();  // El nombre de usuario no debe estar vacío
+        boolean nombreUsuarioValido = !nombreUsuario.isEmpty();
+
+        if (!nombreUsuarioValido) {
+            mostrarMensajeError("El nombre de usuario no puede estar vacío.");
+        }
+
+        return nombreUsuarioValido;
     }
     
     public boolean validarContrasena(char[] contrasena) {
         // Lógica de validación de la contraseña
-        return contrasena.length == 6;  // La contraseña debe tener al menos 6 caracteres
+        boolean contrasenaValida = contrasena.length >= 6;
+
+        if (!contrasenaValida) {
+            mostrarMensajeError("La contraseña debe tener al menos 6 caracteres.");
+        }
+
+        return contrasenaValida;
     }
     
     public void mostrarMensajeError(String mensaje) {

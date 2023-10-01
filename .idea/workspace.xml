@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae0ac33a-a446-4f1c-9162-d13b1fd2f2e6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/EstadoBloqueado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/EstadoNormal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/EstadoUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/AppGestionCuentas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/AppGestionCuentas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/ControladorUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/ControladorUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/LoginUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/LoginUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/modelo/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/modelo/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/modelo/Validador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/modelo/Validador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/VistaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/VistaLogin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +22,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -25,12 +30,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "ilanangelesrodriguez"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ilanangelesrodriguez&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -53,16 +58,16 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "H01-inicio-de-sesion",
-    "last_opened_file_path": "C:/Users/ILAN/Desktop/arquitectura software/app-gestion-cuentas",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;H01-inicio-de-sesion&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ILAN/Desktop/arquitectura software/app-gestion-cuentas&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ILAN\Desktop\arquitectura software\app-gestion-cuentas\src\main\resources" />
