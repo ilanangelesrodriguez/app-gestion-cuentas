@@ -4,6 +4,8 @@
  */
 package com.aadh.appgestioncuentas.vista;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author maxx1212
@@ -395,7 +397,9 @@ public class FrmUser extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField6ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        System.exit(0);
+        JFrame home=new FrmHome();
+        home.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed

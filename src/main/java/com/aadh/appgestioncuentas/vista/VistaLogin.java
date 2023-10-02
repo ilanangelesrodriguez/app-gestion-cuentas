@@ -223,8 +223,9 @@ public class VistaLogin extends javax.swing.JFrame {
             // Credenciales válidas, realizar acciones correspondientes
             validador.mostrarMensajeCorrecto("Bienvenido " + nombreUsuario);
 
-            FrmHome fm = new FrmHome();
-            fm.setVisible(true);
+            //FrmHome fm = new FrmHome();
+            //fm.setVisible(true);
+            usuario.mostrar();
             this.dispose();
 
         } else {

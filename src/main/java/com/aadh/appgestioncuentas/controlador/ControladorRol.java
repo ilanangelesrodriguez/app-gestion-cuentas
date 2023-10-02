@@ -35,9 +35,9 @@ public class ControladorRol {
         Rol rol=readRol(nameRol);
         rol.setNombre(change);
     }
-    public void downRol(String nameRol, String change){
+    public void downRol(String nameRol, EstadoUsuario change){
         Rol rol=readRol(nameRol);
-        rol.setState(change);
+        rol.setEstado(change);
     }
         public List<Rol> obtenerTodosLosUsuarios() {
         return new ArrayList<>(roles);
