@@ -37,5 +37,15 @@ public class ControladorUsuario {
     public List<Usuario> obtenerTodosLosUsuarios() {
         return new ArrayList<>(listaUsuarios);
     }
+    public List<Usuario> obtenerUsuariosBLoqueados(){
+        List<Usuario> usuarios=obtenerTodosLosUsuarios();
+        List<Usuario> usuariosBloqueados=new ArrayList();
+        for (Usuario usuario : usuarios) {
+            if (usuario.isCuentaBloqueada()){
+                usuariosBloqueados.add(usuario);
+            }
+        }
+        return usuariosBloqueados;
+    }
 
 }
