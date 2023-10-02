@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae0ac33a-a446-4f1c-9162-d13b1fd2f2e6" name="Changes" comment="feat(usuario): agregar campo fechaBloqueo">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/ComportamientoAdmin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/ComportamientoEmpleado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/ComportamientoPorDefecto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/ComportamientoRol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/LoginUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/LoginUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/modelo/Rol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/modelo/Rol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/modelo/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/modelo/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/ComportamientoEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/ComportamientoEmpleado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/VistaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/VistaLogin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +57,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "fix/corregir-form",
+    "git-widget-placeholder": "Merge",
     "last_opened_file_path": "C:/Users/ILAN/Desktop/arquitectura software/app-gestion-cuentas",
     "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
   }

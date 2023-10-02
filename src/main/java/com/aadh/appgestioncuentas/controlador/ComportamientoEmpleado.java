@@ -2,10 +2,12 @@ package com.aadh.appgestioncuentas.controlador;
 
 import com.aadh.appgestioncuentas.vista.FrmVisor;
 
+import javax.swing.*;
+
 public class ComportamientoEmpleado implements ComportamientoRol {
     @Override
     public void mostrarFormulario() {
-        FrmVisor frmVisor = new FrmVisor();
-        frmVisor.setVisible(true);
+        JOptionPane.showMessageDialog(null, "Esta sección esta en desarrollo.", "Información para el usuario", JOptionPane.INFORMATION_MESSAGE);
+
     }
 }

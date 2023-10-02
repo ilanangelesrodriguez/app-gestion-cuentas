@@ -237,9 +237,8 @@ public class VistaLogin extends javax.swing.JFrame {
 
     private void botonRecuperarCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRecuperarCuentaActionPerformed
         // TODO add your handling code here:
-        Reactivar reactivar = new Reactivar();
-        reactivar.setVisible(true);
-        this.dispose();
+        JOptionPane.showMessageDialog(null, "Comunicate con el administrador.", "Urgente", JOptionPane.WARNING_MESSAGE);
+
     }//GEN-LAST:event_botonRecuperarCuentaActionPerformed
 
     /**
