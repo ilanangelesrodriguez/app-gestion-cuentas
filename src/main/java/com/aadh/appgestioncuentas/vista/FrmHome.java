@@ -6,7 +6,12 @@ package com.aadh.appgestioncuentas.vista;
 
 /**
  *
- * @author Juanjo
+ * @author
+ *   - Aguilar Villafana
+ *   - Angeles Rodriguez
+ *   - Dueñas Blas
+ *   - Hurtado Ramos
+ *
  */
 public class FrmHome extends javax.swing.JFrame {
 

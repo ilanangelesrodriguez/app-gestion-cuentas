@@ -1,12 +1,8 @@
 package com.aadh.appgestioncuentas.vista;
 
-import com.aadh.appgestioncuentas.controlador.ControladorUsuario;
 import com.aadh.appgestioncuentas.controlador.LoginUsuario;
 import com.aadh.appgestioncuentas.modelo.Usuario;
 import com.aadh.appgestioncuentas.modelo.Validador;
-import java.util.Arrays;
-
-import java.util.Objects;
 import javax.swing.JOptionPane;
 
 /**
@@ -223,8 +219,6 @@ public class VistaLogin extends javax.swing.JFrame {
             // Credenciales válidas, realizar acciones correspondientes
             validador.mostrarMensajeCorrecto("Bienvenido " + nombreUsuario);
 
-            //FrmHome fm = new FrmHome();
-            //fm.setVisible(true);
             usuario.mostrar();
             this.dispose();
 

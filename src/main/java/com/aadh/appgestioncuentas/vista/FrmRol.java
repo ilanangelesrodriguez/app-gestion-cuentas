@@ -6,7 +6,12 @@ package com.aadh.appgestioncuentas.vista;
 
 /**
  *
- * @author maxx1212
+ * @author
+ *   - Aguilar Villafana
+ *   - Angeles Rodriguez
+ *   - Dueñas Blas
+ *   - Hurtado Ramos
+ *
  */
 public class FrmRol extends javax.swing.JFrame {
 
