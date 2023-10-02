@@ -8,10 +8,13 @@ import com.aadh.appgestioncuentas.controlador.ControladorUsuario;
 import com.aadh.appgestioncuentas.controlador.EstadoUsuario;
 import com.aadh.appgestioncuentas.controlador.LoginUsuario;
 import com.aadh.appgestioncuentas.modelo.Usuario;
+import static com.aadh.appgestioncuentas.vista.VistaLogin.InitTable;
+import static com.aadh.appgestioncuentas.vista.VistaLogin.getData;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -29,10 +32,9 @@ public class FrmVisor extends javax.swing.JFrame {
     public FrmVisor() {
         initComponents();
         
-
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        this.InitTable();
+        InitTable(jTable1,users);
 
     }
 
@@ -145,40 +147,10 @@ public class FrmVisor extends javax.swing.JFrame {
         for (int i=0;i<data.size();i++) {
             users.get(i).setEstado((EstadoUsuario) data.get(i)[0]);
         }
-        InitTable();
+        InitTable(jTable1,users);
+
     }//GEN-LAST:event_BtReactivarActionPerformed
-    private void InitTable(){
-        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
-        modelo.setRowCount(0);
-        
-        for (Usuario objeto : users) {
-            Object[] fila = {!objeto.isCuentaBloqueada(), objeto.getUsername(),objeto.getRol().getNombre(),objeto.getFechaBloqueo().format(DateTimeFormatter.ISO_DATE)};            
-            modelo.addRow(fila);
-            
-        }
-        
-        jTable1.repaint();
-    }
-    private List<Object[]> getData(JTable table){
-        DefaultTableModel modelo = (DefaultTableModel) table.getModel();
-        int rowCount = modelo.getRowCount();
-        List<Object[]> datosDeTabla = new ArrayList<>();
-
-        for (int fila = 0; fila < rowCount; fila++) {
-            
-            Object[] filaDatos = new Object[modelo.getColumnCount()];
-
-            for (int columna = 0; columna < modelo.getColumnCount(); columna++) {
-                filaDatos[columna] = modelo.getValueAt(fila, columna);
-            }
-
-            datosDeTabla.add(filaDatos);
-
-            
-        }
-        return datosDeTabla;
-
-    }
+    
     /**
      * @param args the command line arguments
      */
