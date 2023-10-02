@@ -3,7 +3,15 @@ package com.aadh.appgestioncuentas.vista;
 import com.aadh.appgestioncuentas.controlador.LoginUsuario;
 import com.aadh.appgestioncuentas.modelo.Usuario;
 import com.aadh.appgestioncuentas.modelo.Validador;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import java.util.Objects;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -234,7 +242,38 @@ public class VistaLogin extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Comunicate con el administrador.", "Urgente", JOptionPane.WARNING_MESSAGE);
 
     }//GEN-LAST:event_botonRecuperarCuentaActionPerformed
+    public static void InitTable(JTable table,List<Usuario> users){
+        DefaultTableModel modelo = (DefaultTableModel) table.getModel();
+        modelo.setRowCount(0);
+        
+        for (Usuario objeto : users) {
+            Object[] fila = {!objeto.isCuentaBloqueada(), objeto.getUsername(),objeto.getRol().getNombre(),objeto.getFechaBloqueo().format(DateTimeFormatter.ISO_DATE)};            
+            modelo.addRow(fila);
+            
+        }
+        
+        table.repaint();
+    }
+    public static List<Object[]> getData(JTable table){
+        DefaultTableModel modelo = (DefaultTableModel) table.getModel();
+        int rowCount = modelo.getRowCount();
+        List<Object[]> datosDeTabla = new ArrayList<>();
 
+        for (int fila = 0; fila < rowCount; fila++) {
+            
+            Object[] filaDatos = new Object[modelo.getColumnCount()];
+
+            for (int columna = 0; columna < modelo.getColumnCount(); columna++) {
+                filaDatos[columna] = modelo.getValueAt(fila, columna);
+            }
+
+            datosDeTabla.add(filaDatos);
+
+            
+        }
+        return datosDeTabla;
+
+    }
     /**
      * @param args the command line arguments
      */
