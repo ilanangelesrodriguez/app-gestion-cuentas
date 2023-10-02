@@ -30,15 +30,15 @@ public class LoginUsuario {
         // Constructor privado para evitar instanciación directa
         usuarios = new ArrayList<>();
         roles= new ArrayList<>();
-        roles.add(new Rol("Admin","Active"));
-        roles.add(new Rol("Empleado","Active"));
+        roles.add(new Rol("Admin",new EstadoNormal()));
+        roles.add(new Rol("Empleado",new EstadoNormal()));
         
         // Agregar algunos usuarios para propósitos de ejemplo
         usuarios.add(new Usuario("usuario1",roles.get(0), "123456"));
         usuarios.add(new Usuario("usuario2",roles.get(0), "max123"));
         usuarios.add(new Usuario("usuario3",roles.get(0), "123456"));
         usuarios.add(new Usuario("usuario4",roles.get(1), "123456"));
-        System.out.println(usuarios.get(2).getUsername());
+
 
     }
     

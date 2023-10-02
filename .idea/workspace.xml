@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae0ac33a-a446-4f1c-9162-d13b1fd2f2e6" name="Changes" comment="feat(usuario): agregar campo fechaBloqueo">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/Reactivar.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/Reactivar.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/Reactivar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/Reactivar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/ComportamientoAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/ComportamientoEmpleado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/ComportamientoPorDefecto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/ComportamientoRol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/LoginUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/controlador/LoginUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/modelo/Rol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/modelo/Rol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/modelo/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/modelo/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/VistaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aadh/appgestioncuentas/vista/VistaLogin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +74,7 @@
       <recent name="C:\Users\ILAN\Desktop\arquitectura software\app-gestion-cuentas\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Reactivar">
+  <component name="RunManager" selected="Application.VistaLogin">
     <configuration name="AppGestionCuentas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.aadh.appgestioncuentas.AppGestionCuentas" />
       <module name="app-gestion-cuentas" />
@@ -122,8 +129,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Reactivar" />
         <item itemvalue="Application.VistaLogin" />
+        <item itemvalue="Application.Reactivar" />
         <item itemvalue="Application.LoginUsuario" />
         <item itemvalue="Application.AppGestionCuentas" />
       </list>
