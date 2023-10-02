@@ -4,7 +4,7 @@ Trabajo para el curso de Arquitectura de Software.
 
 ## Documentación Javadoc
 
-Puedes encontrar la documentación Javadoc [aquí](app-gestion-cuentas.vercel.app).
+Puedes encontrar la documentación Javadoc [aquí](https://app-gestion-cuentas.vercel.app/).
 
 ## Enlace al Prototipo
 
