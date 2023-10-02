@@ -4,19 +4,38 @@
  */
 package com.aadh.appgestioncuentas.vista;
 
+import com.aadh.appgestioncuentas.controlador.ControladorUsuario;
+import com.aadh.appgestioncuentas.controlador.EstadoUsuario;
+import com.aadh.appgestioncuentas.controlador.LoginUsuario;
+import com.aadh.appgestioncuentas.modelo.Usuario;
+import static com.aadh.appgestioncuentas.vista.VistaLogin.InitTable;
+import static com.aadh.appgestioncuentas.vista.VistaLogin.getData;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import javax.swing.JFrame;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Juanjo
  */
 public class FrmVisor extends javax.swing.JFrame {
-
+    private LoginUsuario lu = LoginUsuario.getInstance();
+    private ControladorUsuario controladorUsuario = new ControladorUsuario(lu.getUsuarios());
+    private List<Usuario> users=controladorUsuario.obtenerUsuariosBLoqueados();
     /**
      * Creates new form FrmVisor
      */
     public FrmVisor() {
         initComponents();
+        
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+        InitTable(jTable1,users);
+
     }
 
     /**
@@ -32,7 +51,7 @@ public class FrmVisor extends javax.swing.JFrame {
         go_menu = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        BtReactivar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -50,22 +69,27 @@ public class FrmVisor extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
-                "ID", "Nombres", "Rol"
+                "", "Nombres", "Rol", "Fecha"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Boolean.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setText("Reactivar Cuenta");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        BtReactivar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BtReactivar.setText("Reactivar Cuenta");
+        BtReactivar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                BtReactivarActionPerformed(evt);
             }
         });
 
@@ -77,7 +101,7 @@ public class FrmVisor extends javax.swing.JFrame {
                 .addContainerGap(101, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
+                .addComponent(BtReactivar)
                 .addGap(17, 17, 17))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,7 +124,7 @@ public class FrmVisor extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(197, 197, 197)
-                        .addComponent(jButton2)))
+                        .addComponent(BtReactivar)))
                 .addGap(18, 18, 18)
                 .addComponent(go_menu)
                 .addContainerGap(32, Short.MAX_VALUE))
@@ -116,10 +140,17 @@ public class FrmVisor extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_go_menuActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void BtReactivarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtReactivarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+        List<Object[]> data=getData(jTable1);
+        for (int i=0;i<data.size();i++) {
+            users.get(i).setEstado((EstadoUsuario) data.get(i)[0]);
+        }
+        InitTable(jTable1,users);
 
+    }//GEN-LAST:event_BtReactivarActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -156,8 +187,8 @@ public class FrmVisor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtReactivar;
     private javax.swing.JButton go_menu;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
