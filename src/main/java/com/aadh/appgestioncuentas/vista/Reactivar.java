@@ -12,8 +12,14 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author maxx1212
+ * @author
+ *   - Aguilar Villafana
+ *   - Angeles Rodriguez
+ *   - Dueñas Blas
+ *   - Hurtado Ramos
+ *
  */
+
 public class Reactivar extends javax.swing.JFrame {
 
     /**

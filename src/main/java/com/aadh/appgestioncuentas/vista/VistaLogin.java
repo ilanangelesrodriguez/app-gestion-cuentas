@@ -1,6 +1,5 @@
 package com.aadh.appgestioncuentas.vista;
 
-import com.aadh.appgestioncuentas.controlador.ControladorUsuario;
 import com.aadh.appgestioncuentas.controlador.LoginUsuario;
 import com.aadh.appgestioncuentas.modelo.Usuario;
 import com.aadh.appgestioncuentas.modelo.Validador;
@@ -228,8 +227,6 @@ public class VistaLogin extends javax.swing.JFrame {
             // Credenciales válidas, realizar acciones correspondientes
             validador.mostrarMensajeCorrecto("Bienvenido " + nombreUsuario);
 
-            //FrmHome fm = new FrmHome();
-            //fm.setVisible(true);
             usuario.mostrar();
             this.dispose();
 
@@ -242,9 +239,8 @@ public class VistaLogin extends javax.swing.JFrame {
 
     private void botonRecuperarCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRecuperarCuentaActionPerformed
         // TODO add your handling code here:
-        Reactivar reactivar = new Reactivar();
-        reactivar.setVisible(true);
-        this.dispose();
+        JOptionPane.showMessageDialog(null, "Comunicate con el administrador.", "Urgente", JOptionPane.WARNING_MESSAGE);
+
     }//GEN-LAST:event_botonRecuperarCuentaActionPerformed
     public static void InitTable(JTable table,List<Usuario> users){
         DefaultTableModel modelo = (DefaultTableModel) table.getModel();

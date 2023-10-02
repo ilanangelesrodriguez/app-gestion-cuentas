@@ -20,7 +20,12 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Juanjo
+ * @author
+ *   - Aguilar Villafana
+ *   - Angeles Rodriguez
+ *   - Dueñas Blas
+ *   - Hurtado Ramos
+ *
  */
 public class FrmVisor extends javax.swing.JFrame {
     private LoginUsuario lu = LoginUsuario.getInstance();
