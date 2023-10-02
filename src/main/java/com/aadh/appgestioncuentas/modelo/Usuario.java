@@ -1,7 +1,6 @@
 package com.aadh.appgestioncuentas.modelo;
 
-import com.aadh.appgestioncuentas.controlador.EstadoNormal;
-import com.aadh.appgestioncuentas.controlador.EstadoUsuario;
+import com.aadh.appgestioncuentas.controlador.*;
 
 import java.time.LocalDateTime;
 
@@ -47,6 +46,8 @@ public class Usuario {
      */
     private LocalDateTime fechaBloqueo;
 
+    private ComportamientoRol comportamientoRol;
+
     /**
      * Constructor de la clase Usuario.
      *
@@ -59,6 +60,27 @@ public class Usuario {
         this.rol=rol;
         this.estado = new EstadoNormal();
         this.intentosFallidos = 0;
+        this.comportamientoRol = obtenerComportamiento(rol);
+    }
+
+    private ComportamientoRol obtenerComportamiento(Rol rol) {
+        // Lógica para asignar el comportamiento adecuado basado en el rol
+        if (rol.getNombre().equals("Admin")) {
+            return new ComportamientoAdmin();
+        } else if (rol.getNombre().equals("Empleado")) {
+            return new ComportamientoEmpleado();
+        } else {
+            // Puedes agregar más casos según sea necesario
+            return new ComportamientoPorDefecto(); // Otra implementación por defecto
+        }
+    }
+
+    public void establecerComportamiento(ComportamientoRol comportamientoRol) {
+        this.comportamientoRol = comportamientoRol;
+    }
+
+    public void mostrar() {
+        comportamientoRol.mostrarFormulario();
     }
 
     public Rol getRol() {
