@@ -2,6 +2,10 @@
 
 Trabajo para el curso de Arquitectura de Software.
 
+## Documentación Javadoc
+
+Puedes encontrar la documentación Javadoc [aquí](docs/javadoc/index.html).
+
 ## Enlace al Prototipo
 
 Puedes ver el prototipo del proyecto en Figma haciendo clic en el siguiente enlace:
