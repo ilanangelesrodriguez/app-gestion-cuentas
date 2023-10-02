@@ -11,4 +11,5 @@
         <maven.compiler.target>19</maven.compiler.target>
         <exec.mainClass>com.mycompany.app.gestion.cuentas.AppGestionCuentas</exec.mainClass>
     </properties>
+    
 </project>

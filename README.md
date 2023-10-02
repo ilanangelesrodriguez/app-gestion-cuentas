@@ -2,6 +2,12 @@
 
 Trabajo para el curso de Arquitectura de Software.
 
+## Enlace al Prototipo
+
+Puedes ver el prototipo del proyecto en Figma haciendo clic en el siguiente enlace:
+
+[Ver Prototipo en Figma](https://www.figma.com/file/JfoVSL9LVqCq5h5YedZwvh/AS_Aguilar-Angeles-Due%C3%B1as-Hurtado?type=design&node-id=1%3A6&mode=design&t=ZGCmtxFeZnJDvhjC-1)
+
 ## Requisitos Previos
 
 - Java 8 o superior.
@@ -37,6 +43,38 @@ Si deseas contribuir al proyecto, sigue estos pasos:
 2. Crea una nueva rama para tu contribución: `git checkout -b feature/nueva-caracteristica`.
 3. Realiza tus cambios y realiza commits significativos.
 4. Envía una solicitud de extracción (pull request) a la rama principal del proyecto.
+
+## Estructura de Ramas
+
+Este proyecto sigue una estructura de ramas inspirada en GitFlow, utilizando las ramas principales `main` y `develop`.
+
+- **`main`:** La rama principal que refleja el estado de producción. Cada confirmación en esta rama debería representar una versión estable del software.
+
+- **`develop`:** La rama de desarrollo principal. Es la rama de integración para nuevas características y correcciones de errores antes de ser fusionadas en la rama `main`.
+
+## Flujo de Trabajo
+
+1. **Desarrollo de Funcionalidades:**
+   - Para trabajar en una nueva característica, crea una rama a partir de `develop`:
+     ```bash
+     git checkout -b nombre-de-la-funcionalidad develop
+     ```
+   - Una vez terminada la funcionalidad, fusiona de nuevo con `develop`.
+
+2. **Preparación para Lanzamiento:**
+   - Cuando estés listo para lanzar una nueva versión, crea una rama de lanzamiento:
+     ```bash
+     git checkout -b release/1.0.0 develop
+     ```
+   - Realiza correcciones y pruebas necesarias en la rama de lanzamiento y, cuando esté listo, fusiona con `main` y `develop`.
+
+3. **Corrección de Problemas en Producción:**
+   - Si surge un problema crítico en producción, crea una rama de hotfix:
+     ```bash
+     git checkout -b hotfix/nombre-del-hotfix main
+     ```
+   - Realiza correcciones y pruebas necesarias en la rama de hotfix y, cuando esté listo, fusiona con `main` y `develop`.
+
 
 ## Licencia
 
