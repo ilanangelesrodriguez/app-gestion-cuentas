@@ -35,6 +35,4 @@ public class Rol {
         this.estado = estado;
     }
 
-    public void setState(String change) {
-    }
 }
