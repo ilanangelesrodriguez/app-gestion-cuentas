@@ -4,7 +4,7 @@ Trabajo para el curso de Arquitectura de Software.
 
 ## Documentación Javadoc
 
-Puedes encontrar la documentación Javadoc [aquí](docs/javadoc/index.html).
+Puedes encontrar la documentación Javadoc [aquí](app-gestion-cuentas).
 
 ## Enlace al Prototipo
 
