@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.aadh.appgestioncuentas"},{"l":"com.aadh.appgestioncuentas.controlador"},{"l":"com.aadh.appgestioncuentas.modelo"},{"l":"com.aadh.appgestioncuentas.vista"}];updateSearchResults();
