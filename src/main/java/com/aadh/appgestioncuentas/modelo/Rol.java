@@ -4,32 +4,37 @@
  */
 package com.aadh.appgestioncuentas.modelo;
 
+import com.aadh.appgestioncuentas.controlador.EstadoUsuario;
+
 /**
  *
  * @author maxx1212
  */
 public class Rol {
-    private String Nombre;
-    private String State;
+    private String nombre;
+    private EstadoUsuario estado;
 
-    public Rol(String Nombre, String State) {
-        this.Nombre = Nombre;
-        this.State = State;
+    public Rol(String nombre, EstadoUsuario estado) {
+        this.nombre = nombre;
+        this.estado = estado;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getState() {
-        return State;
+    public EstadoUsuario getEstado() {
+        return estado;
     }
 
-    public void setState(String State) {
-        this.State = State;
+    public void setEstado(EstadoUsuario estado) {
+        this.estado = estado;
+    }
+
+    public void setState(String change) {
     }
 }
